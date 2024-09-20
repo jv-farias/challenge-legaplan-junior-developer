@@ -1,0 +1,56 @@
+name: Preview 
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency: ci-${{ github.ref }}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout to repository
+      - name: Checkout to repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.14.0
+
+      - name: Install
+        working-directory: .
+        run: npm ci
+
+      - name: Lint & Test
+        working-directory: .
+        run: |
+          npm run lint
+          npm run test
+      
+      - name: Build
+        working-directory: .
+        run: |
+          npm run build
+          npm run build-storybook
+        shell: bash
+
+      - name: Deploy Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          # 👇Runs Chromatic with the option to compress the build output.
+          zip: true
