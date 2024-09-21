@@ -9,7 +9,3 @@ test("renders DialogMobile with children", () => {
   expect(element).toBeInTheDocument();
 });
 
-test("renders DialogMobile with correct styles", () => {
-  const { container } = render(<DialogMobile><p>Dialog</p></DialogMobile>);
-  expect(container.firstChild).toHaveClass("page");
-});

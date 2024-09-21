@@ -19,7 +19,7 @@ export const Header = ({ user }: HeaderProps) => {
 
   return (
     <header className={styles.header}>
-      <Image src={logo} alt="Focal Point Logo" className={styles.logo} />
+      <Image src={logo} alt="Focal Point Logo" fill className={styles.logo} />
       {user ? (
         <h1 className={styles.title}>Bem-vindo de volta, {user.name}</h1>
       ) : (
