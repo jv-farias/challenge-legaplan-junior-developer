@@ -49,8 +49,8 @@ export const TaskList = () => {
   const handleAddTask = () => {
     if (newTask.task.trim() === "" || !Array.isArray(tasks)) {
       toast.error("Digite o título da tarefa");
-      return; 
-    };
+      return;
+    }
     const updatedTasks = [...tasks, { ...newTask, id: uuidv4() }];
     setTasks(updatedTasks);
     setNewTask({ id: "", task: "", isCompleted: false });
@@ -72,15 +72,13 @@ export const TaskList = () => {
     setTasks(updatedTasks);
     setTaskToDelete(null);
     setOpenDeleteModal(false);
+    toast.success("Tarefa deletada com sucesso");
   };
 
   return (
     <>
       <main className={styles.container}>
-        <div>
-          <Toaster position="bottom-right" />
-        </div>
-
+        <Toaster position="bottom-right" />
         <h2 className={styles.title}>Suas tarefas de hoje</h2>
         <div className={styles.list}>
           {getTasksPending(tasks).length > 0 ? (
