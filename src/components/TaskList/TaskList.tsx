@@ -20,14 +20,10 @@ import { ModalContent } from "../Modal/ModalContent";
 import { ModalFooter } from "../Modal/ModalFooter";
 
 export const TaskList = () => {
-  const [tasks, setTasks] = useState<TaskCardProps[]>(() => {
-    const savedTasks = localStorage.getItem("tasks");
-    return savedTasks ? JSON.parse(savedTasks) : [];
-  });
-
   const [openAddModal, setOpenAddModal] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState<string | null>(null);
+  const [tasks, setTasks] = useState<TaskCardProps[]>([]);
   const [newTask, setNewTask] = useState<TaskCardProps>({
     id: "",
     task: "",
@@ -35,6 +31,13 @@ export const TaskList = () => {
   });
 
   const modals = useMediaQuery("(min-width: 768px)");
+
+  useEffect(() => {
+    const tasks = localStorage.getItem("tasks");
+    if (tasks) {
+      setTasks(JSON.parse(tasks));
+    }
+  }, []);
 
   useEffect(() => {
     if (tasks && Array.isArray(tasks)) {
