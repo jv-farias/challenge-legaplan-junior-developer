@@ -1,0 +1,58 @@
+.card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px dashed #d7dde9;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background: #f7f9fd;
+  }
+
+  .checkbox {
+    min-width: 1.5rem;
+    max-width: 1.5rem;
+    min-height: 1.5rem;
+    max-height: 1.5rem;
+    border: 1px solid #d7dde9;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .text {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .delete {
+    cursor: pointer;
+    padding: 4px;
+    font-size: 20px;
+  }
+}
+
+.completed {
+  .checkbox {
+    border: 1px solid #0796d3;
+    background: #a0dcf6;
+  }
+
+  .text {
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.54);
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
