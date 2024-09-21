@@ -130,12 +130,12 @@ export const TaskList = () => {
                 </form>
               </ModalContent>
               <ModalFooter>
-                <Button label="Adicionar" onClick={handleAddTask} />
                 <Button
                   label="Cancelar"
                   variant="secondary"
                   onClick={() => setOpenAddModal(false)}
                 />
+                <Button label="Adicionar" onClick={handleAddTask} />
               </ModalFooter>
             </Modal>
           ) : (
@@ -182,14 +182,14 @@ export const TaskList = () => {
               </ModalContent>
               <ModalFooter>
                 <Button
-                  label="Deletar"
-                  variant="destructive"
-                  onClick={handleDeleteTask}
-                />
-                <Button
                   label="Cancelar"
                   variant="secondary"
                   onClick={() => setOpenDeleteModal(false)}
+                />
+                <Button
+                  label="Deletar"
+                  variant="destructive"
+                  onClick={handleDeleteTask}
                 />
               </ModalFooter>
             </Modal>
