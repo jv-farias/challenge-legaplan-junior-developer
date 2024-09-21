@@ -18,6 +18,7 @@ import { Modal } from "../Modal";
 import { ModalHeader } from "../Modal/ModalHeader";
 import { ModalContent } from "../Modal/ModalContent";
 import { ModalFooter } from "../Modal/ModalFooter";
+import toast, { Toaster } from "react-hot-toast";
 
 export const TaskList = () => {
   const [openAddModal, setOpenAddModal] = useState(false);
@@ -46,11 +47,15 @@ export const TaskList = () => {
   }, [tasks]);
 
   const handleAddTask = () => {
-    if (newTask.task.trim() === "" || !Array.isArray(tasks)) return;
+    if (newTask.task.trim() === "" || !Array.isArray(tasks)) {
+      toast.error("Digite o título da tarefa");
+      return; 
+    };
     const updatedTasks = [...tasks, { ...newTask, id: uuidv4() }];
     setTasks(updatedTasks);
     setNewTask({ id: "", task: "", isCompleted: false });
     setOpenAddModal(false);
+    toast.success("Tarefa adicionada com sucesso");
   };
 
   const handleOpenAddDialog = () => {
@@ -72,6 +77,10 @@ export const TaskList = () => {
   return (
     <>
       <main className={styles.container}>
+        <div>
+          <Toaster position="bottom-right" />
+        </div>
+
         <h2 className={styles.title}>Suas tarefas de hoje</h2>
         <div className={styles.list}>
           {getTasksPending(tasks).length > 0 ? (
