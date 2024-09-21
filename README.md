@@ -11,6 +11,13 @@ Bem-vindo ao repositório do projeto **ToDoList**! Este projeto foi desenvolvido
 
 ## Tecnologias Utilizadas
 
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)
+
+
 Este projeto foi construído utilizando as seguintes tecnologias e ferramentas:
 
 - **Next.js** com **App Router**: Para construir uma aplicação moderna de alto desempenho, aproveitando a renderização no servidor e as funcionalidades mais recentes do framework.
