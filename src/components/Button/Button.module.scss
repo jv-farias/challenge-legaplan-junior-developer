@@ -1,0 +1,46 @@
+.button {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  @media screen and (min-width: 768px) {
+    max-width: 450px;
+  }
+
+  &.primary {
+    background: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+  }
+
+  &.secondary {
+    background: #e7eefb;
+    color: #000;
+  }
+
+  &.destructive {
+    background: linear-gradient(90deg, #d30707 0%, #f05353 68.65%);
+  }
+
+  &.small {
+    padding: 0.75rem 1.25rem;
+  }
+
+  &.medium {
+    padding: 1rem 1.5rem;
+  }
+
+  &.large {
+    padding: 1.25rem 2rem;
+  }
+}
