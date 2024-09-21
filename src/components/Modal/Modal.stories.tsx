@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import type { Meta, StoryObj } from "@storybook/react";
 import { Modal } from "./Modal";
 import { ModalHeader } from "./ModalHeader";

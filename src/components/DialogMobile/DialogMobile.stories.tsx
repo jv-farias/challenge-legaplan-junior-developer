@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import type { Meta, StoryObj } from "@storybook/react";
 import { DialogMobile } from "./DialogMobile";
 import { Button } from "../Button";
@@ -6,10 +8,9 @@ import styles from "../TaskList/TaskList.module.scss";
 import { DialogHeader } from "./DialogMobileHeader/DialogMobileHeader";
 import { DialogContent } from "./DialogMobileContent";
 import { DialogFooter } from "./DialogMobileFooter";
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 export type Story = StoryObj<typeof DialogMobile>;
-
 
 const meta: Meta<typeof DialogMobile> = {
   title: "Components/DialogMobile",
@@ -17,7 +18,7 @@ const meta: Meta<typeof DialogMobile> = {
   tags: ["autodocs"],
   parameters: {
     viewport: {
-      defaultViewport: 'iphone13',
+      defaultViewport: "iphone13",
       viewports: INITIAL_VIEWPORTS,
     },
   },
