@@ -1,0 +1,31 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d7dde9;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.56);
+  font-weight: 400;
+  outline: none;
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: #aab2c2; // Altera a cor da borda ao focar
+  }
+}
